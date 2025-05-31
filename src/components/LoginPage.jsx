@@ -9,7 +9,7 @@ import { Eye, EyeOff, ArrowLeft } from 'react-feather';
 import PrototypeAlert from "./PrototypeAlert";
 
 // Definir a URL base da API (ajuste conforme necessário, pode vir de .env)
-const API_BASE_URL = "http://localhost:3001"; // Assumindo que o backend roda na porta 3001
+const API_BASE_URL = import.meta.env.VITE_API_URL; 
 
 const LoginPage = () => {
     const navigate = useNavigate();
