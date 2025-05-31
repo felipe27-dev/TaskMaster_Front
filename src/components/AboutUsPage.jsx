@@ -39,7 +39,7 @@ const teamMembersData = [
     },
     {
         id: 3,
-        photoUrl: `https://ui-avatars.com/api/?name=Felipe+Rosa+2&background=DC143C&color=fff&size=128&font-size=0.33&bold=true`,
+        photoUrl: `https://ui-avatars.com/api/?name=Felipe+Rosa&background=DC143C&color=fff&size=128&font-size=0.33&bold=true`,
         name: 'Felipe Rosa',
         course: 'Sistemas de Informação - 1º Semestre - UFMS',
         role: 'Desenvolvedor Full-Stack',
