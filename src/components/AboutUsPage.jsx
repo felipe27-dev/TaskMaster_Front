@@ -67,7 +67,7 @@ const AboutUsPage = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-[#1E2A3B] via-[#101A27] to-[#0C141F] text-slate-100 p-4 sm:p-8">
+        <div className=" min-h-screen bg-gradient-to-br from-[#1E2A3B] via-[#101A27] to-[#0C141F] text-slate-100 p-4 sm:p-8">
             <div className="max-w-6xl mx-auto">
                 {/* Cabeçalho da Página */}
                 <div className="flex items-center mb-10 relative">
@@ -90,7 +90,7 @@ const AboutUsPage = () => {
 
                 {/* Grid de Cards dos Membros */}
                 {teamMembersData.length > 0 ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+                    <div className="grid items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
                         {teamMembersData.map(member => (
                             <TeamMemberCard
                                 key={member.id}
