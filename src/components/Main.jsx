@@ -109,7 +109,7 @@ export default function Main({ sidebarCollapsed }) {
             params.append('sort_by', activeSort);
         }
         const queryString = params.toString();
-        return queryString ? `api/tasks?${queryString}` : `api/tasks`; // Return only endpoint + query
+        return queryString ? `/tasks?${queryString}` : `/tasks`; // Return only endpoint + query
     }, [searchTerm, activeFilters, activeSort]);
 
     const fetchTasks = useCallback(async () => {
@@ -209,7 +209,7 @@ export default function Main({ sidebarCollapsed }) {
         setError(null);
         try {
             // Use fetchWithAuth for POST
-            await fetchWithAuth('api/tasks', {
+            await fetchWithAuth('/tasks', {
                 method: 'POST',
                 // Headers ('Content-Type', 'Authorization') are added automatically by fetchWithAuth
                 body: JSON.stringify(newTaskData),
@@ -234,7 +234,7 @@ export default function Main({ sidebarCollapsed }) {
         setError(null);
         try {
             // Use fetchWithAuth for DELETE
-            await fetchWithAuth(`api/tasks/${taskId}`, { method: 'DELETE' });
+            await fetchWithAuth(`/tasks/${taskId}`, { method: 'DELETE' });
             // fetchWithAuth returns null on successful 204 (DELETE success without body)
             console.log(`Main: Task ${taskId} deleted successfully.`);
         } catch (e) {
@@ -263,7 +263,7 @@ export default function Main({ sidebarCollapsed }) {
         try {
             console.log(`Main: Updating task ${taskId} with data:`, updatedData);
             // Use fetchWithAuth for PUT
-            const updatedTask = await fetchWithAuth(`api/tasks/${taskId}`, {
+            const updatedTask = await fetchWithAuth(`/tasks/${taskId}`, {
                 method: 'PUT',
                 body: JSON.stringify(updatedData),
             });
@@ -304,7 +304,7 @@ export default function Main({ sidebarCollapsed }) {
 
             try {
                 // Use fetchWithAuth for the bulk delete endpoint
-                await fetchWithAuth('api/tasks/completed', { method: 'DELETE' });
+                await fetchWithAuth('/tasks/completed', { method: 'DELETE' });
                 alert(`${tasksToDelete.length} tarefas concluídas foram excluídas com sucesso.`);
             } catch (err) {
                  // Ignore 404 (Not Found) error if there were no completed tasks on the backend

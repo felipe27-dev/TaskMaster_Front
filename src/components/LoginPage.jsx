@@ -43,7 +43,7 @@ const LoginPage = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.post(`${API_BASE_URL}/api/auth/login`, {
+            const response = await axios.post(`${API_BASE_URL}/auth/login`, {
                 email,
                 password,
             });
@@ -70,7 +70,7 @@ const LoginPage = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.post(`${API_BASE_URL}/api/auth/register`, {
+            const response = await axios.post(`${API_BASE_URL}/auth/register`, {
                 username, // Usar 'username' conforme o backend espera
                 email,
                 password,
